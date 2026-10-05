@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0A0A0B;
+    --bg-secondary: #111113;
+    --accent-orange: #F26A21;
+    --accent-brass-start: #C9A24B;
+    --accent-brass-mid: #F3E2A9;
+    --accent-brass-end: #A8782A;
+    --neutral-cream: #E9DFCF;
+  }
+
+  html {
+    background-color: #0A0A0B;
+    color: #E9DFCF;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: auto;
+    overflow-x: hidden;
+    selection-background-color: #F26A21;
+    selection-color: #0A0A0B;
+  }
+
+  body {
+    background-color: #0A0A0B;
+    color: #E9DFCF;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(242, 106, 33, 0.35);
+    color: #E9DFCF;
+  }
+}
+
+.font-serif-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-script-maka {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2.1;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A24B 0%, #F3E2A9 50%, #A8782A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C9A24B 0%, #F3E2A9 50%, #A8782A 100%);
+}
+
+.border-gold-subtle {
+  border-color: rgba(201, 162, 75, 0.25);
+}
+
+/* Subtle luxury film grain overlay */
+.bg-noise-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Architectural blueprint faint grid */
+.bg-blueprint-grid {
+  background-size: 64px 64px;
+  background-image: 
+    linear-gradient(to right, rgba(201, 162, 75, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 162, 75, 0.04) 1px, transparent 1px);
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A24B;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

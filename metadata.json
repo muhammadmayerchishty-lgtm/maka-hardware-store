@@ -1,0 +1,6 @@
+{
+  "name": "MAKA — REX Hardware & Interior",
+  "description": "Premium door hardware, cabinet hardware, kitchen accessories, and architectural interior fittings in Lahore, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
